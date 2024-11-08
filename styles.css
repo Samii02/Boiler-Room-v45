@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(238, 225, 163);
+}
+
+h1 {
+    padding: 1rem;
+}
+
+.inputSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#infoInput {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+.inputBox {
+    width: 50vw;
+    margin: 1rem;
+    padding: 0.3rem;
+}
+
+button {
+    width: 10rem;
+    margin: 1rem;
+    margin-top: 0;
+    padding: 0.2rem;
+    align-self: flex-end;
+}
+
+#taskListTitle {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.taskList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 2.5rem;
+    background-color: rgb(207, 219, 230);
+}
+
+#taskListTitle {
+    margin-top: 5rem;
+}
+
+.taskStatusTitle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.listContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5vw;
+    width: 80%;
+}
+
+#completedTasks, #unCompletedTasks {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3vw;
+
+}
+
+#li1 {
+    background-color: blanchedalmond;
+    padding: 1rem;
+    width: 15rem;
+    height: 15rem;
+}

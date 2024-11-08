@@ -4,9 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
-    
+    <header>
+        <h1>To-Do List</h1>
+    </header>
+
+    <section class="inputSection">
+        <h2 id="infoInput">Fyll i info</h2>
+        <input id="title" class="inputBox" type="textbox" placeholder="Titel på uppgift, ex: Tvätta bilen">
+        <input id="description" class="inputBox" type="textbox" placeholder="Beskrivning av uppgiften">
+        <input id="priority" class="inputBox" type="textbox" placeholder="Är uppgiften viktig? Ja eller Nej?">
+        <button>Add task</button>
+    </section>
+
+    <section class="taskList">
+        <h2 id="taskListTitle">Uppgift lista</h2>
+        <div class="listContainer">
+            <div>
+                <h3 class="taskStatusTitle">Att göra</h3>
+                <ul id="unCompletedTasks">
+                    <li id="li1">hej</li>
+                    <li id="li1">då</li>
+                    <li id="li1">då</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="taskStatusTitle">Klara</h3>
+                <ul id="completedTasks">
+                    <li id="li1">bla</li>
+                    <li id="li1">alb</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
