@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List</title>
+    Added HTML and CSS for interactive To-Do list
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>To-Do List</h1>
+
+    <!-- To add more tasks -->
+    <form id="task-form">
+        <input type="text" id="task-input" placeholder="Lägg till en ny uppgift" required>
+        <button type="submit">Lägg till</button>
+    </form>
+
+    <!-- Container for lal list -->
+    <div class="board">
+        <div class="list" id="todo-list">
+            <div class="list-title">To Do</div>
+        </div>
+        <div class="list" id="in-progress-list">
+            <div class="list-title">In Progress</div>
+        </div>
+        <div class="list" id="completed-list">
+            <div class="list-title">Completed</div>
+        </div>
+    </div>
+</body>
+</html>
