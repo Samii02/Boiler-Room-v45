@@ -46,7 +46,7 @@ button {
 
 #taskListTitle {
     margin-top: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
 .taskList {
@@ -56,6 +56,12 @@ button {
     width: 100%;
     margin-top: 2.5rem;
     background-color: rgb(207, 219, 230);
+}
+
+#tasksToDo, #doneTasks {
+    background-color: rgb(184, 203, 220);
+    padding: 2.5rem;
+    margin-bottom: 3rem;
 }
 
 #taskListTitle {
@@ -69,18 +75,21 @@ button {
 }
 
 .listContainer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5vw;
+    display: flex;
+    justify-content: space-between;
     width: 80%;
+    gap: 2rem; 
+    margin: 0 auto;
 }
 
 #completedTasks, #unCompletedTasks {
     list-style-type: none;
+    padding: 0;
+    width: 48%;
+    margin: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3vw;
-
+    gap: 2rem;
 }
 
 #li1 {
