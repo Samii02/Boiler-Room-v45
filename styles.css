@@ -36,6 +36,43 @@ h1 {
     padding: 0.3rem;
 }
 
+.dropdownContainer {
+    align-self: flex-start;
+    padding: 8px;
+}
+
+#prioritySelectorLabel {
+    font-size: 15px;
+    margin: 10px;
+    color: #4a4a4a;
+}
+
+select {
+    font-size: 16px;
+    padding: 8px;
+    border: 1.5px solid #bdbdbd;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #4a4a4a;
+    cursor: pointer;
+    width: 65px;
+    height: 37px;
+}
+
+select option {
+    font-size: 16px;
+    padding: 8px;
+    background-color: #fff;
+    color: #0e0404;
+}
+
+select:focus {
+    border-color: rgb(184, 203, 220);
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
 button {
     background-color: rgb(95, 150, 95);
     color: white;

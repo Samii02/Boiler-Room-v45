@@ -27,22 +27,17 @@ function checkForPlaceholder(list, placeholderId) {
 function createTaskObject() {
     const taskTitle = titleInput.value.trim();
     const description = descriptionInput.value.trim();
-    const priority = priorityInput.value.trim().toLowerCase();
+    const priority = priorityInput.value.toLowerCase();
 
     if (!taskTitle || !description || !priority) {
-        alert("Please fill in all fields.");
-        return;
-    }
-
-    if (priority !== "ja" && priority !== "nej") {
-        alert('Skriv antingen "Ja" eller "Nej"!');
-        priorityInput.value = '';
+        alert("Fyll i all information som efterfrågas!");
         return;
     }
 
     let newTask = { 
         title: taskTitle,
         description: description,
+        important: null,
         complete: false,
         id: generateId()
     };
