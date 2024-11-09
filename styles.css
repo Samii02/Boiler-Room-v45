@@ -93,9 +93,37 @@ button {
     gap: 2rem;
 }
 
-#li1 {
+.task-item {
+    position: relative;
     background-color: blanchedalmond;
     padding: 1rem;
     width: 15rem;
     height: 15rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.task-item strong {
+    font-size: 20px;
+    color: rgb(53, 53, 152);
+    margin-bottom: 0.5rem;
+}
+
+.complete-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 0.5rem 1rem;
+    width: 6rem;
+    background-color: rgb(95, 150, 95);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.complete-btn:hover {
+    background-color: rgb(66, 120, 66);
 }
