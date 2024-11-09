@@ -12,8 +12,16 @@ function generateId() {
     for (let i = 0; i < 8; i++) {
         id += characters.charAt(Math.floor(Math.random() * characters.length));        
     }
-    console.log(id);
     return id;
+}
+
+function checkForPlaceholder(list, placeholderId) {
+    if (list.children.length === 0) {
+        const placeholder = document.createElement('p');
+        placeholder.id = placeholderId;
+        placeholder.textContent = placeholderId === 'unCompleted-placeholder' ? 'No tasks yet...' : 'No completed tasks yet...';
+        list.appendChild(placeholder);
+    }
 }
 
 function createTaskObject() {
@@ -69,7 +77,13 @@ function createTaskObject() {
         completeTask(listItem);
     });
 
+    const uncompletedPlaceholder = unCompletedTasks.querySelector('#unCompleted-placeholder');
+    if (uncompletedPlaceholder) {
+        uncompletedPlaceholder.remove();
+    }
+
     unCompletedTasks.appendChild(listItem);
+    checkForPlaceholder(completedTasks, 'completed-placeholder');
 
     titleInput.value = '';
     descriptionInput.value = '';
@@ -83,7 +97,12 @@ function completeTask(taskItem) {
     taskItem.querySelector('strong').style.color = 'gray';
     taskItem.querySelectorAll('p').forEach(function(p) {
         p.style.color = 'grey';
-    })
+    });
+
+    const completedPlaceholder = completedTasks.querySelector('#completed-placeholder');
+    if (completedPlaceholder) {
+        completedPlaceholder.remove();
+    }
 
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'Ta bort';
@@ -97,9 +116,17 @@ function completeTask(taskItem) {
     completedTasks.appendChild(taskItem);
     taskItem.complete = true;
 
-    function deleteTask(taskItem) {
-        taskItem.parentElement.removeChild(taskItem);
-    }
-    
+    checkForPlaceholder(unCompletedTasks, 'unCompleted-placeholder');
 }
+
+function deleteTask(taskItem) {
+    taskItem.parentElement.removeChild(taskItem);
+
+    checkForPlaceholder(unCompletedTasks, 'unCompleted-placeholder');
+    checkForPlaceholder(completedTasks, 'completed-placeholder');
+}
+
 addTaskButton.addEventListener('click', createTaskObject);
+
+checkForPlaceholder(unCompletedTasks, 'unCompleted-placeholder');
+checkForPlaceholder(completedTasks, 'completed-placeholder');

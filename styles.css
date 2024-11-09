@@ -108,7 +108,7 @@ button:hover {
     padding: 1rem;
     width: 15rem;
     height: 15rem;
-    border-radius: 10px;
+    border-radius: 2px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -118,6 +118,17 @@ button:hover {
     font-size: 20px;
     color: rgb(53, 53, 152);
     margin-bottom: 0.5rem;
+}
+
+#unCompleted-placeholder, #completed-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+    padding: 1rem;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 20px;
 }
 
 .complete-btn {
