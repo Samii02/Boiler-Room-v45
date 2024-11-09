@@ -121,6 +121,11 @@ button:hover {
     margin-bottom: 3rem;
 }
 
+.important-icon {
+    font-size: 20px;
+    margin-left: 5px;
+}
+
 .listContainer {
     display: flex;
     justify-content: space-between;
@@ -141,7 +146,7 @@ button:hover {
 
 .task-item {
     position: relative;
-    background-color: blanchedalmond;
+    background-color: rgb(255, 240, 217);
     padding: 1rem;
     width: 15rem;
     height: 15rem;

@@ -37,7 +37,7 @@ function createTaskObject() {
     let newTask = { 
         title: taskTitle,
         description: description,
-        important: null,
+        important: priority === "ja",
         complete: false,
         id: generateId()
     };
@@ -50,6 +50,13 @@ function createTaskObject() {
     const taskContent = document.createElement('div');
     const taskTitleElement = document.createElement('strong');
     taskTitleElement.textContent = newTask.title;
+
+    if (newTask.important) {
+        const icon = document.createElement('span');
+        icon.textContent = '⭐';
+        icon.classList.add('important-icon');
+        taskTitleElement.appendChild(icon);
+    }
 
     const taskDescriptionElement = document.createElement('p');
     taskDescriptionElement.textContent = newTask.description;
