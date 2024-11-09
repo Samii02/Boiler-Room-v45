@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
 </head>
 
 <body>
@@ -15,9 +14,9 @@
 
     <section class="inputSection">
         <h2 id="infoInput">Fyll i info</h2>
-        <input id="title" class="inputBox" type="textbox" placeholder="Titel på uppgift, ex: Tvätta bilen">
-        <input id="description" class="inputBox" type="textbox" placeholder="Beskrivning av uppgiften">
-        <input id="priority" class="inputBox" type="textbox" placeholder="Är uppgiften viktig? Ja eller Nej?">
+        <input id="title" class="inputBox" type="text" placeholder="Titel på uppgift, ex: Tvätta bilen">
+        <input id="description" class="inputBox" type="text" placeholder="Beskrivning av uppgiften">
+        <input id="priority" class="inputBox" type="text" placeholder="Är uppgiften viktig? Ja eller Nej?">
         <button>Add task</button>
     </section>
 
@@ -27,19 +26,17 @@
             <div id="tasksToDo">
                 <h3 class="taskStatusTitle">Att göra</h3>
                 <ul id="unCompletedTasks">
-                    <li id="li1">hej</li>
-                    <li id="li1">då</li>
-                    <li id="li1">då</li>
+
                 </ul>
             </div>
             <div id="doneTasks">
                 <h3 class="taskStatusTitle">Klara</h3>
                 <ul id="completedTasks">
-                    <li id="li1">bla</li>
-                    <li id="li1">alb</li>
+
                 </ul>
             </div>
         </div>
     </section>
+    <script src="script.js"></script>
 </body>
 </html>
