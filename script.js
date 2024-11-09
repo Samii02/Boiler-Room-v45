@@ -85,7 +85,21 @@ function completeTask(taskItem) {
         p.style.color = 'grey';
     })
 
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Ta bort';
+    deleteButton.classList.add('delete-btn');
+    taskItem.appendChild(deleteButton);
+
+    deleteButton.addEventListener('click', function() {
+        deleteTask(taskItem);
+    });
+
     completedTasks.appendChild(taskItem);
     taskItem.complete = true;
+
+    function deleteTask(taskItem) {
+        taskItem.parentElement.removeChild(taskItem);
+    }
+    
 }
 addTaskButton.addEventListener('click', createTaskObject);

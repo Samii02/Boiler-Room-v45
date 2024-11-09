@@ -136,3 +136,20 @@ button:hover {
 .complete-btn:hover {
     background-color: rgb(66, 120, 66);
 }
+
+.delete-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 0.5rem 1rem;
+    width: 6rem;
+    background-color: rgb(202, 76, 76);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: rgb(166, 51, 51);
+}
