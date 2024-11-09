@@ -3,6 +3,9 @@ const descriptionInput = document.getElementById('description');
 const priorityInput = document.getElementById('priority');
 const addTaskButton = document.querySelector('button');
 
+const unCompletedTasks = document.getElementById('unCompletedTasks');
+const completedTasks = document.getElementById('completedTasks');
+
 function generateId() {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let id = '';
@@ -16,17 +19,23 @@ function generateId() {
 function createTaskObject() {
     const taskTitle = titleInput.value.trim();
     const description = descriptionInput.value.trim();
-    const priority = priorityInput.value.trim();
+    const priority = priorityInput.value.trim().toLowerCase();
 
     if (!taskTitle || !description || !priority) {
         alert("Please fill in all fields.");
         return;
     }
 
+    if (priority !== "ja" && priority !== "nej") {
+        alert('Skriv antingen "Ja" eller "Nej"!');
+        priorityInput.value = '';
+        return;
+    }
+
     let newTask = { 
         title: taskTitle,
         description: description,
-        done: false,
+        complete: false,
         id: generateId()
     };
     console.log(newTask);
@@ -42,17 +51,20 @@ function createTaskObject() {
     const taskDescriptionElement = document.createElement('p');
     taskDescriptionElement.textContent = newTask.description;
 
+    const taskId = document.createElement('p');
+    taskId.textContent = newTask.id;
+
     taskContent.appendChild(taskTitleElement);
     taskContent.appendChild(taskDescriptionElement);
+    taskContent.appendChild(taskId);
     listItem.appendChild(taskContent);
 
-        // Create and add the "Complete" button
+
     const completeButton = document.createElement('button');
-    completeButton.textContent = 'Complete';
+    completeButton.textContent = 'Klar';
     completeButton.classList.add('complete-btn');
     listItem.appendChild(completeButton);
 
-    // Add the event listener to the "Complete" button
     completeButton.addEventListener('click', function() {
         completeTask(listItem);
     });
@@ -65,14 +77,15 @@ function createTaskObject() {
 }
 
 function completeTask(taskItem) {
-    // Mark the task as done and move it to the completed tasks list
-    taskItem.querySelector('.complete-btn').remove();  // Remove the complete button when the task is done
+    taskItem.querySelector('.complete-btn').remove();
     
-    // Optionally, strike-through the title or change the color to indicate completion
     taskItem.querySelector('strong').style.textDecoration = 'line-through';
     taskItem.querySelector('strong').style.color = 'gray';
+    taskItem.querySelectorAll('p').forEach(function(p) {
+        p.style.color = 'grey';
+    })
 
-    // Append the task to the completed tasks list
     completedTasks.appendChild(taskItem);
+    taskItem.complete = true;
 }
 addTaskButton.addEventListener('click', createTaskObject);

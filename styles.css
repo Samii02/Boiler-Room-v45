@@ -37,11 +37,20 @@ h1 {
 }
 
 button {
+    background-color: rgb(95, 150, 95);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
     width: 10rem;
     margin: 1rem;
     margin-top: 0;
-    padding: 0.2rem;
+    padding: 0.5rem;
     align-self: flex-end;
+}
+
+button:hover {
+    background-color: rgb(66, 120, 66);
 }
 
 #taskListTitle {
