@@ -19,7 +19,7 @@ function checkForPlaceholder(list, placeholderId) {
     if (list.children.length === 0) {
         const placeholder = document.createElement('p');
         placeholder.id = placeholderId;
-        placeholder.textContent = placeholderId === 'unCompleted-placeholder' ? 'No tasks yet...' : 'No completed tasks yet...';
+        placeholder.textContent = placeholderId === 'unCompleted-placeholder' ? 'Inga uppgifter än...' : 'Inga klara uppgifter än...';
         list.appendChild(placeholder);
     }
 }
