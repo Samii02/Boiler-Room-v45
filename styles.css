@@ -162,6 +162,10 @@ button:hover {
     margin-bottom: 0.5rem;
 }
 
+.task-item p {
+    word-wrap: break-word;
+}
+
 #unCompleted-placeholder, #completed-placeholder {
     display: flex;
     justify-content: center;
