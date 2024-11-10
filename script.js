@@ -29,7 +29,7 @@ function createTaskObject() {
     const description = descriptionInput.value.trim();
     const priority = priorityInput.value.toLowerCase();
 
-    if (!taskTitle || !description || !priority) {
+    if (!taskTitle || !priority) {
         alert("Fyll i all information som efterfrågas!");
         return;
     }
