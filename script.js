@@ -22,6 +22,7 @@ function checkForPlaceholder(list, placeholderId) {
         const placeholder = document.createElement('p');  // Create a placeholder element
 
         // Set placeholder text based on the list type
+        placeholder.id = placeholderId;
         placeholder.textContent = placeholderId === 'unCompleted-placeholder' ? 'Inga uppgifter än...' : 'Inga klara uppgifter än...';
         list.appendChild(placeholder);
     }
